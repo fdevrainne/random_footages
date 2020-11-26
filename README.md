@@ -33,6 +33,11 @@ This algorithm gives a new order to our n randomly generated frames that makes i
 <br>
 
 ## Comments
+The first question I asked myself was : why did not I create a 2D random walker on the center of my polygon. Take a seed state and from it, run my random walk on my centers, that create iteratively the next frame. <br>
+This method will create, I think, a really smooth videos. But they will not be any chaos in these videos. And that is what I wanted to create. <br>
+The fact that from one frame to the other (see in the result section), a square can disappear from the top to appear in the bottom, illustrate visually how metrics can jump in a counterintuitive way.
+
+
 One can repproach the really long time to compute a video (factorial n distances computated). And to make it faster and simpler with only n distances computated, one can also propose the order induced by the distance between the first frame and all the others. But I assumed it would create a far less fluid videos. <br>
 To recconcile these two approaches, we could also process the n frames by batches (let's say of size m). At the first iteration, the m closest frames to the first frame are chosen to be the m next frames on the video. And the process is repeated until no more images.<br>
 At the first iteration n distances are computed, but at the second n-m, at the third n-2m ... <br>
@@ -58,7 +63,7 @@ The intersection between a triangle and a square is a polygon but what is the in
 
 # Results
 
-Below some results are showed :
+Below some results are showed. These gifs that loop on themselves are created from a hundred of frame ordered according to the custom distance. <br>
 
 The first created frame : <br>
 
